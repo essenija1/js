@@ -1,36 +1,42 @@
 ' use strict';
 
-const products = ({
+const products = [{
 		id: 1,
-		title: 'Акция Facebook',
-		foto: '.../hw6/facebook.png',
-		price: 500,
+		title: 'Акция Insta',
+		foto: '../HW-1/insta.svg',
+		price: 200,
 	},
 	{
 		id: 2,
-		title: 'Акция Twitter',
-		foto: '.../hw6/twitter.png',
-		price: 500,
+		title: 'Акция Facebook',
+		foto: '../HW-1/facebook.jpg',
+		price: 100,
 	},
 	{
 		id: 3,
-		title: 'Акция Insta',
-		foto: '.../hw6/insta.png',
-		price: 500,
+		title: 'Акция Youtube',
+		foto: '../HW-1/youtube.jpg',
+		price: 250,
 	},
 	{
 		id: 4,
-		title: 'Акция Youtube',
-		foto: '.../hw6/youtube.png',
-		price: 500,
-	}
-);
+		title: 'Акция Twitter',
+		foto: '../HW-1/twitter.jpg',
+		price: 150,
+	},
+	{
+		id: 5,
+		title: 'Акция Crown',
+		foto: '../HW-1/crown.svg',
+		price: 350,
+	},
+];
 
-//ФУНКЦИОНАЛЬНЫЕ ВЫРАЖЕНИЯ СО ЗНАЧЕНИЯМИ ИЗ МАССИВА ОБЪЕКТОВ
+//ФУНКЦИОНАЛЬНЫЕ ВЫРАЖЕНИЯ СО ЗНАЧЕНИЯМИ ИЗ МАССИВА ОБЪЕКТОВ==========================================
 
 //Функциональное выражение, отвечающее за генерацию строки будущей разметки
 
-/* ИСХОДНЫЙ КОД
+/* ИСХОДНЫЙ КОД-----------------------------------------------------------------------------
 const renderProduct = (title, foto, price) => {
 	return `<div class = "product-item">
 				<h3>${title}</h3>
@@ -41,7 +47,7 @@ const renderProduct = (title, foto, price) => {
 };
 */
 
-//СОКРАЩЕННЫЙ КОД
+//СОКРАЩЕННЫЙ КОД----------------------------------------------------------------------------
 const renderProduct = ((title, foto, price) => 
 				`<div class = "product-item">
 				<h3>${title}</h3>
@@ -54,7 +60,7 @@ const renderProduct = ((title, foto, price) =>
 
 //Функциональное выражение, отвечающее за перебор массива товаров и передачи данных в функцию, формирующую строки
 
-/* ИСХОДНЫЙ КОД
+/* ИСХОДНЫЙ КОД-------------------------------------------------------------------------------
 const renderProducts = (list) => {
 	let productList = list.map((product) => {
 		return renderProduct(product.title, product.foto, product.price);
@@ -66,7 +72,7 @@ renderProducts(products);
 
 */
 
-//СОКРАЩЕННЫЙ КОД
+//СОКРАЩЕННЫЙ КОД------------------------------------------------------------------------------
 
 const renderProducts = list => {
 	let productList = (list.map(product => renderProduct(product.title, product.foto, product.price))).join('');
@@ -75,9 +81,9 @@ const renderProducts = list => {
 renderProducts(products);
 
 
-//ФУНКЦИОНАЛЬНЫЕ ВЫРАЖЕНИЯ СО ЗНАЧЕНИЯМИ ПО УМОЛЧАНИЮ
+//ФУНКЦИОНАЛЬНЫЕ ВЫРАЖЕНИЯ СО ЗНАЧЕНИЯМИ ПО УМОЛЧАНИЮ==========================================
 
-/* ИСХОДНЫЙ КОД
+/* ИСХОДНЫЙ КОД--------------------------------------------------------------------------------
 
 const renderProduct1 = (title = "Наименование товара", foto = '../img/HW-1/blind.jpg',
 	price = 'Цена товара') => {
@@ -92,7 +98,7 @@ const renderProduct1 = (title = "Наименование товара", foto = 
 */
 
 //СОКРАЩЕННЫЙ КОД------------------------------------------------------------------------------
-const renderProduct1 = ((title = "Наименование товара", foto = '.../hw6/blind.jpg',
+const renderProduct1 = ((title = "Наименование товара", foto = '../HW-1/blind.jpg',
 		price = 'Цена товара') => 
 				`<div class = "product-item">
 				<h3>${title}</h3>
@@ -103,7 +109,7 @@ const renderProduct1 = ((title = "Наименование товара", foto =
 );
 
 
-/* ИСХОДНЫЙ КОД
+/* ИСХОДНЫЙ КОД---------------------------------------------------------------------------------
 const renderProducts1 = list => {
 	let productList1 = list.map((product) => {
 		return renderProduct1();
@@ -115,7 +121,7 @@ renderProducts1(products);
 */
 
 
-//СОКРАЩЕННЫЙ КОД
+//СОКРАЩЕННЫЙ КОД-------------------------------------------------------------------------------
 
 const renderProducts1 = list => {
 	let productList1 = (list.map(() => renderProduct1()).join(''));
