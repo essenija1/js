@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="script_1.js"></script>
-
-	<title>Домашнее задание</title>
+	<script defer src="script_1.js"></script>
+	<script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<title>Домашнее задание №1</title>
 	<link rel="stylesheet" href="style.css">
 	<style>
 		h1 {
@@ -59,57 +59,58 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="container">
+		<div class="container">			
+			
 			<article class="article-HW">
-				<p>Домашнее задание</br>
-				Варианты сокращения функциональных выражений</p>
+				<h1 class="h1-HW">Домашнее задание</h1>
+				<p>Варианты сокращения функциональных выражений.</p>
 				
-				<p>Исходный код объявления функционального выражения, отвечающего за перебор массива товаров и передачу данных в функциональное выражение, формирующее строки:
-				const renderProducts = (list) => {
-				let productList = list.map((product) => {
-				return renderProduct(product.title, product.foto, product.price);
-				});
-				productList = productList.join('');
-				document.querySelector('.products').innerHTML = productList;
-				};
-				renderProducts(products);
-				Измененный код:
-				const renderProducts = list => {
-				let productList = (list.map(product => renderProduct(product.title, product.foto, product.price))).join('');
-				document.querySelector('.products').innerHTML = productList;
-				};
-				renderProducts(products);
+				<p><strong>Исходный код</strong> объявления функционального выражения, отвечающего за перебор массива товаров и передачу данных в функциональное выражение, формирующее строки:</p>
+				<p>const renderProducts = (list) => {<br>
+				let productList = list.map((product) => {<br>
+				return renderProduct(product.title, product.foto, product.price);<br>
+				});<br>
+				productList = productList.join('');<br>
+				document.querySelector('.products').innerHTML = productList;<br>
+				};<br>
+				renderProducts(products);</p>
+				<p><strong>Вариант:</strong></p>
+				<p>const renderProducts = list => {<br>
+				let productList = (list.map(product => renderProduct(product.title, product.foto, product.price))).join('');<br>
+				document.querySelector('.products').innerHTML = productList;<br>
+				};<br>
+				renderProducts(products);</p>
 				
-				<p>Исходный код объявления функционального выражения, отвечающего за генерацию строки будущей разметки:
-				const renderProduct = (title, foto, price) => {
-					return `< div class="_product-item">
-					< h3 >${title}< /h3>
-					< img src={foto}>< /img>
-					< p>${price}< /p>
-					< button class="by-btn">Добавить< /button>
-					< /div>`;
-						};</br>
-				Измененный код:
-				const renderProduct = ((title, foto, price) =>
-				`< div class="product-item">
-					< h3>${title}< /h3>
-					< img src=${foto}>< /img>
-					< p>${price}< /p>
-					< button class="by-btn">Добавить< /button>
-				< /div>`
+				<p><strong>Исходный код</strong> объявления функционального выражения, отвечающего за генерацию строки будущей разметки:</p>
+				<p>const renderProduct = (title, foto, price) => {<br>
+					return `< div class="_product-item"><br>
+					< h3 >${title}< /h3><br>
+					< img src={foto}>< /img><br>
+					< p>${price}< /p><br>
+					< button class="by-btn">Добавить< /button><br>
+					< /div>`;<br>
+				};</p>
+				<p><strong>Вариант:</strong></p>
+				<p>const renderProduct = ((title, foto, price) =><br>
+				`< div class="product-item"><br>
+					< h3>${title}< /h3><br>
+					< img src=${foto}>< /img><br>
+					< p>${price}< /p><br>
+					< button class="by-btn">Добавить< /button><br>
+				< /div>`<br>
 				);</p>
 				
-				
+				<br>
 
 				<button type="button" onclick="window.location.href= '#'" class="answerBtn btn-cart">Корзина</button>
-				
+				<br>
+				<br>
 				<div class="flex__row">
 					<div class="products" ></div>
 					<h1>Значение аргументов функции по умолчанию</h1>
 					<div class="products1"></div>
 				</div>
-
-
+				<br>
 			
 		</div>
 	</div>
